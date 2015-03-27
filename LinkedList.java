@@ -15,7 +15,8 @@ public class LinkedList<T> {
 	
 	public void addFirst (T e) {
 		Node<T> tempo = new Node<T>(e);
-		if(this.head.getNext()!=null){
+		//if(this.head.getNext()!=null){
+		if(this.head.next!=null){
 			Node<T> first = this.head.getNext();
 			tempo.setNext(first);	
 			this.head.setNext(tempo);		
@@ -73,7 +74,8 @@ public class LinkedList<T> {
 		while (current.getNext() != null && test == false) {
 			if(current.getNext().getData().equals(e)){
 				test = true;
-				current.setNext(current.getNext().getNext());
+				//current.setNext(current.getNext().getNext());
+				current.setNext(current.next.next);
 				this.size--;
 			}else{
 				current = current.getNext();
