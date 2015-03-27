@@ -47,9 +47,10 @@ public class LinkedList<T> {
 	}
 	
 	public T pop () { 
-		Node<T> first = this.head.getNext();
-		this.remove((T)first);
-		return (T)first;
+		T first = this.head.getNext().getData();
+		this.remove(first);
+		return first;
+
 	}
 	
 	public T poll () { 
