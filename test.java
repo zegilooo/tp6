@@ -3,32 +3,45 @@ package tp6;
 public class test {
 
 	public static void main(String[] args) {
-		/*
+		
+		System.out.println("******* ArrayList<Integer> test ********");
+		
 		ArrayList<Integer> test = new ArrayList<Integer>();
-		for(int i = 0; i < 50; i++) {
+		
+		for(int i = 0; i < 10; i++) {
 			test.add (new Integer(i));
 		}
-
-		System.out.println(test.size());
-		System.out.println(test.get(49));
 		
-		*/
-		
-		LinkedList<Integer> test2 = new LinkedList<Integer>();
-		for(int i = 0; i < 50; i++) {
-			test2.addLast (new Integer(i));
+		for(int i = 0; i < test.size(); i++) {
+			System.out.println(i + " - " +test.get(i) );
 		}
 
-		System.out.println(test2.size());
-		System.out.println(test2.get(0));
+		System.out.println("=> test.remove(new Integer(5)); ");
+		test.remove(new Integer(5));
+
+		for(int i = 0; i < test.size(); i++) {
+			System.out.println(i + " - " +test.get(i) );
+		}
 		
+		System.out.println("******* LinkedList<String> test ********");
 		
-		test2.remove(new Integer(38));
+		LinkedList<String> l = new LinkedList <String>();
+		l.add ( new String (" Bonjour " ));
+		l.add ( new String (" Monsieur " ));
+		l.add ( new String (" George " ));
+
+		// ( a )
+		for(int i = 0; i < l.size(); i++) {
+			System.out.println(i + " - " +l.get(i) );
+		}
 		
-		for(int i = 0; i < 49; i++) {
-			System.out.println(i + " - " +test2.get(i) );
+		System.out.println("=> l.remove (1); ");
+		l.remove (1);
+		
+		// ( b )
+		for(int i = 0; i < l.size(); i++) {
+			System.out.println(i + " - " +l.get(i) );
 		}
 	}
 	
-
 }

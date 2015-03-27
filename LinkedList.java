@@ -35,6 +35,8 @@ public class LinkedList<T> {
 		this.size++;
 	}
 	
+	public void add(T e) {this.addLast (e);} // shortcut for addLast
+	
 	public T get (int i) { 
 		if(i < 0 || i >= this.size ) {throw new ArrayIndexOutOfBoundsException (i); }
 		Node<T> current = this.head;
@@ -44,15 +46,14 @@ public class LinkedList<T> {
  		return (T) current.getData();
 	}
 	
-
 	public T pop () { 
-		T tempo = this.get(0);
-		this.remove(tempo);
-		return tempo;
+		Node<T> first = this.head.getNext();
+		this.remove((T)first);
+		return (T)first;
 	}
 	
 	public T poll () { 
-		return pop();
+		return this.pop();
 	}
 	
 	public T peekFirst () {
@@ -79,6 +80,15 @@ public class LinkedList<T> {
 		}
 		return test;
 	}
+	
+	public T remove (int i){
+		T tempo = this.get(i);
+		boolean test = this.remove(tempo);
+		if(!test){
+			return null;
+			}
+		return tempo; 	
+	}
 
 	class Node<E> {
 		private E data;
@@ -95,7 +105,7 @@ public class LinkedList<T> {
 		
 		public E getData() {
 			return this.data;
-        }
+		}
  
         public void setData(E e) {
         	this.data = e;
