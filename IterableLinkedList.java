@@ -17,13 +17,12 @@ public class IterableLinkedList<T> implements Iterable<T>{
 	
 	public void addFirst (T e) {
 		Node<T> tempo = new Node<T>(e);
-		//if(this.head.getNext()!=null){
 		if(this.head.next!=null){
-			Node<T> first = this.head.getNext();
-			tempo.setNext(first);	
-			this.head.setNext(tempo);		
+			Node<T> first = this.head.next;
+			tempo.next = first;	
+			this.head.next = tempo;		
 		}else{
-			this.head.setNext(tempo);
+			this.head.next = tempo;
 		}
 		this.size++;
 	}
@@ -31,10 +30,10 @@ public class IterableLinkedList<T> implements Iterable<T>{
 	public void addLast (T e) { 
 		Node<T> tempo = new Node<T>(e);
 		Node<T> current = this.head;
-		while (current.getNext() != null) {
-			current = current.getNext();
+		while (current.next != null) {
+			current = current.next;
 		}
-		current.setNext(tempo);
+		current.next = tempo;
 		this.size++;
 	}
 	
@@ -44,13 +43,13 @@ public class IterableLinkedList<T> implements Iterable<T>{
 		if(i < 0 || i >= this.size ) {throw new ArrayIndexOutOfBoundsException (i); }
 		Node<T> current = this.head;
 		for(int j = 0; j < i+1 ; j++) {
-			current = current.getNext();
+			current = current.next;
 		}
- 		return (T) current.getData();
+ 		return (T) current.data;
 	}
 	
 	public T pop () { 
-		T first = this.head.getNext().getData();
+		T first = this.head.next.data;
 		this.remove(first);
 		return first;
 
@@ -73,14 +72,13 @@ public class IterableLinkedList<T> implements Iterable<T>{
 	public boolean remove (T e) { 
 		Node<T> current = this.head;
 		boolean test = false;
-		while (current.getNext() != null && test == false) {
-			if(current.getNext().getData().equals(e)){
+		while (current.next != null && test == false) {
+			if(current.next.data.equals(e)){
 				test = true;
-				//current.setNext(current.getNext().getNext());
-				current.setNext(current.next.next);
+				current.next = current.next.next;
 				this.size--;
 			}else{
-				current = current.getNext();
+				current = current.next;
 			}
 		}
 		return test;
@@ -107,22 +105,6 @@ public class IterableLinkedList<T> implements Iterable<T>{
 			this.data = e;
 			this.next = null;
 		}
-		
-		public E getData() {
-			return this.data;
-		}
- 
-        public void setData(E e) {
-        	this.data = e;
-        }
- 
-        public Node<E> getNext() {
-        	return this.next;
-        }
- 
-        public void setNext(Node<E> next) {
-        	this.next = next;
-        }
 	}
 	
 	@Override
