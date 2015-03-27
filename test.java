@@ -1,28 +1,42 @@
 package tp6;
 
+import java.util.Iterator;
+
 public class test {
 
 	public static void main(String[] args) {
-		/*
+		
+		
+
 		System.out.println("******* ArrayList<Integer> test ********");
 		
-		ArrayList<Integer> test = new ArrayList<Integer>();
+		IterableArrayList<Integer> test = new IterableArrayList<Integer>();
 		
 		for(int i = 0; i < 10; i++) {
 			test.add (new Integer(i));
 		}
 		
-		for(int i = 0; i < test.size(); i++) {
-			System.out.println(i + " - " +test.get(i) );
+		for (Integer i : test) {
+			System.out.println(i);
 		}
+		
+		/*for(int i = 0; i < test.size(); i++) {
+			System.out.println(i + " - " +test.get(i) );
+		}*/
+		
 
 		System.out.println("=> test.remove(new Integer(5)); ");
 		test.remove(new Integer(5));
 
-		for(int i = 0; i < test.size(); i++) {
-			System.out.println(i + " - " +test.get(i) );
+		for (Integer i : test) {
+			System.out.println(i);
 		}
-		*/
+				
+		/*for(int i = 0; i < test.size(); i++) {
+			System.out.println(i + " - " +test.get(i) );
+		}*/
+		
+		/*
 		System.out.println("******* LinkedList<String> test ********");
 		
 		LinkedList<String> l = new LinkedList <String>();
@@ -80,6 +94,7 @@ public class test {
 		for(int i = 0; i < l2.size(); i++) {
 			System.out.println(i + " - " +l2.get(i) );
 		}
+			*/
 	}
 	
 }
