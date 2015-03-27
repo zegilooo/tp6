@@ -8,11 +8,11 @@ public class test {
 		
 		
 
-		System.out.println("******* ArrayList<Integer> test ********");
+		System.out.println("******* IterableArrayList<Integer> test ********");
 		
 		IterableArrayList<Integer> test = new IterableArrayList<Integer>();
 		
-		for(int i = 0; i < 10; i++) {
+		for(int i = 0; i < 7; i++) {
 			test.add (new Integer(i));
 		}
 		
@@ -20,81 +20,44 @@ public class test {
 			System.out.println(i);
 		}
 		
-		/*for(int i = 0; i < test.size(); i++) {
-			System.out.println(i + " - " +test.get(i) );
-		}*/
-		
-
 		System.out.println("=> test.remove(new Integer(5)); ");
 		test.remove(new Integer(5));
 
 		for (Integer i : test) {
 			System.out.println(i);
 		}
-				
-		/*for(int i = 0; i < test.size(); i++) {
-			System.out.println(i + " - " +test.get(i) );
-		}*/
+
+		System.out.println("******* IterableLinkedList<String> test ********");
 		
-		/*
-		System.out.println("******* LinkedList<String> test ********");
-		
-		LinkedList<String> l = new LinkedList <String>();
+		IterableLinkedList<String> l = new IterableLinkedList <String>();
 		l.add ( new String (" Bonjour " ));
 		l.add ( new String (" Monsieur " ));
 		l.add ( new String (" George " ));
 
 		// ( a )
-		for(int i = 0; i < l.size(); i++) {
+		/*for(int i = 0; i < l.size(); i++) {
 			System.out.println(i + " - " +l.get(i) );
+		}*/
+		for (String i : l) {
+			System.out.println(i);
 		}
 		
 		System.out.println("=> l.pop(); ");
 		l.pop();
 		
 		// ( b )
-		for(int i = 0; i < l.size(); i++) {
-			System.out.println(i + " - " +l.get(i) );
+		for (String i : l) {
+			System.out.println(i);
 		}
 		
 		System.out.println("=> l.remove (new String (\" George \" )); ");
 		l.remove (new String (" George " ));
 		
 		// ( c )
-		for(int i = 0; i < l.size(); i++) {
-			System.out.println(i + " - " +l.get(i) );
+		for (String i : l) {
+			System.out.println(i);
 		}
-		
-	System.out.println("******* LinkedList2<String> test ********");
-		
-		LinkedList2<String> l2 = new LinkedList2 <String>();
-		l2.add ( new String (" Bonjour " ));
-		l2.add ( new String (" Monsieur " ));
-		l2.add ( new String (" George " ));
-		l2.add ( new String (" Lang " ));
-
-		// ( a )
-		for(int i = 0; i < l2.size(); i++) {
-			System.out.println(i + " - " +l2.get(i) );
-		}
-		
-		//System.out.println("=> l2.remove (1); ");
-		//l2.remove (1);
-		System.out.println("=> l2.pop ();");
-		l2.pop ();
-		// ( b )
-		for(int i = 0; i < l2.size(); i++) {
-			System.out.println(i + " - " +l2.get(i) );
-		}
-		
-		System.out.println("=> l2.remove (new String (\" Lang \" )); ");
-		l2.remove (new String (" Lang " ));
-		
-		// ( c )
-		for(int i = 0; i < l2.size(); i++) {
-			System.out.println(i + " - " +l2.get(i) );
-		}
-			*/
+			
 	}
 	
 }
