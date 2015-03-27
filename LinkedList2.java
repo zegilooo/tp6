@@ -1,7 +1,5 @@
 package tp6;
 
-import tp6.LinkedList.Node;
-
 public class LinkedList2<T> {
 	private Node<T> head ;
 	private int size;
